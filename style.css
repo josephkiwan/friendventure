@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 *, *:before, *:after {
   box-sizing: border-box;
@@ -20,6 +19,7 @@ h1 {
   color: #f7f7f7;
   padding: 0;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .container {
@@ -97,7 +97,7 @@ h1 {
 .add-items-section form span {
   padding: 10px;
   color: #f7f7f7;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: normal;
 }
 .add-items-section form input[type=number] {
@@ -127,10 +127,6 @@ h1 {
 .add-items-section form input[type=submit]:hover {
   background-color: #fff;
   color: #2d8474;
-}
-.add-items-section form input[type=text].error {
-  outline: red 1px solid;
-  content: "Error!";
 }
 
 @media (min-width: 1024px) {
@@ -164,6 +160,9 @@ h1 {
   padding: 36px 0 36px 0;
   color: #ffffff;
 }
+.shopping-items-section .item-row {
+  position: relative;
+}
 .shopping-items-section .item {
   width: 100%;
   margin: 0px 0px 17px 0px;
@@ -175,6 +174,9 @@ h1 {
   text-align: center;
   color: #2d8474;
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .shopping-items-section .item:hover {
   opacity: 0.8;
@@ -190,15 +192,22 @@ h1 {
 }
 .shopping-items-section .selected:after {
   position: absolute;
-  margin-top: -25px;
-  margin-left: 90px;
-  padding-top: 9px;
-  content: "✔";
-  width: 42px;
-  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   border-radius: 21px;
   background-color: #2d8474;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' width='24'%3E%3Cpath d='M9.55 18.2 3.65 12.3 5.275 10.675 9.55 14.95 18.725 5.775 20.35 7.4Z'/%3E%3C/svg%3E");
   color: #fff;
+  top: 0;
+  right: 0;
+  transform: translate(20%, -20%);
+  overflow: unset;
+  z-index: 999;
+  text-overflow: unset;
+  white-space: unset;
 }
 
 @media (min-width: 320px) {
@@ -216,14 +225,7 @@ h1 {
     text-align: left;
   }
   .shopping-items-section .selected:after {
-    position: absolute;
-    padding-top: 9px;
-    content: "";
-    width: 42px;
-    height: 42px;
-    border-radius: 21px;
-    background: none;
-    color: #fff;
+    transform: translate(20%, -20%);
   }
 }
 .shopping-footer {
