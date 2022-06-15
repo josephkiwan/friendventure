@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>EINKAUFSLISTE</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container bg-gradient">
+        <div class="wrapper">
+            <h1>EINKAUFSLISTE</h1>
+            <div class="add-items-section">
+                <form id="shopping-form">
+                    <input type="number" name="qty-input" id="shopping-qty" value="1" />
+                    <span>x</span>
+                    <input type="text" name="item" required id="shopping-item" />
+                    <input type="submit" name="add" id="shopping-item-add" value="Hinzufügen" />
+                    <div class="notice d-none" id="notice">First letter must be capital.</div>
+                </form>
+            </div>
+            <div class="shopping-items-section" id="shopping-list">
+
+            </div>
+            <div class="shopping-footer d-none" id="shopping-footer">
+                <span id="shopping-list-summary"></span>
+                <div>
+                    <a class="btn" onclick="slist.clear();">Liste leeren</a>
+                    <a class="btn" onclick="slist.share();">Share on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
